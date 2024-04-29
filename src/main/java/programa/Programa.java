@@ -38,8 +38,8 @@ public class Programa extends javax.swing.JFrame {
         jRadioButtonDark = new javax.swing.JRadioButton();
         jRadioButtonSpooky = new javax.swing.JRadioButton();
         jRadioButtonChrist = new javax.swing.JRadioButton();
-        jLabelNumChistes = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextFieldNumChistes = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,16 +96,17 @@ public class Programa extends javax.swing.JFrame {
         jRadioButtonChrist.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButtonChrist.setText("Christmast");
 
-        jLabelNumChistes.setBackground(new java.awt.Color(102, 102, 102));
-        jLabelNumChistes.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabelNumChistes.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNumChistes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNumChistes.setText("1");
-
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GENERADOR DE CHISTES MALOS");
+
+        jTextFieldNumChistes.setEditable(false);
+        jTextFieldNumChistes.setBackground(new java.awt.Color(102, 102, 102));
+        jTextFieldNumChistes.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jTextFieldNumChistes.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldNumChistes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldNumChistes.setText("1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,12 +135,12 @@ public class Programa extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabelTextoSelecIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(29, 29, 29)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabelTextoSelectCant, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelNumChistes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldNumChistes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 40, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -150,9 +151,12 @@ public class Programa extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTextoSelecIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelTextoSelecIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabelTextoSelecCat, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -169,7 +173,7 @@ public class Programa extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTextoSelectCant, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNumChistes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldNumChistes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(124, 124, 124))
         );
 
@@ -227,12 +231,17 @@ public class Programa extends javax.swing.JFrame {
             public void run() {
                 new Programa().setVisible(true);
             }
+            
+            // Logica del programa
+            String urlBase = "https://v2.jokeapi.dev/joke/Programming?lang=es";
+            String urlBase2 = "https://v2.jokeapi.dev/joke/Any?lang=es&amount=5";
+            
+            
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelNumChistes;
     private javax.swing.JLabel jLabelTextoSelecCat;
     private javax.swing.JLabel jLabelTextoSelecIdioma;
     private javax.swing.JLabel jLabelTextoSelectCant;
@@ -245,5 +254,6 @@ public class Programa extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonPun;
     private javax.swing.JRadioButton jRadioButtonSpooky;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextFieldNumChistes;
     // End of variables declaration//GEN-END:variables
 }

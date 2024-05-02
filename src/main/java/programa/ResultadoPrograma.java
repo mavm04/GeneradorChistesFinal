@@ -16,6 +16,9 @@ public class ResultadoPrograma extends javax.swing.JDialog {
     public ResultadoPrograma(Programa parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        String data = parent.getInfo();
+        this.jTextAreaResultadoFinal.setText(data);
+        
     }
 
     /**
@@ -29,18 +32,18 @@ public class ResultadoPrograma extends javax.swing.JDialog {
 
         jPanelResultado = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaResultadoFinal = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanelResultado.setBackground(new java.awt.Color(51, 51, 51));
 
-        jTextArea1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaResultadoFinal.setBackground(new java.awt.Color(51, 51, 51));
+        jTextAreaResultadoFinal.setColumns(20);
+        jTextAreaResultadoFinal.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaResultadoFinal.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaResultadoFinal);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 204, 204));
@@ -122,6 +125,6 @@ public class ResultadoPrograma extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanelResultado;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaResultadoFinal;
     // End of variables declaration//GEN-END:variables
 }

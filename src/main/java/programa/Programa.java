@@ -498,7 +498,6 @@ public class Programa extends javax.swing.JFrame {
                 }
             }
         }
-
         return resultado;
     }
 }
